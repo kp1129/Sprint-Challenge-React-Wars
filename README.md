@@ -26,13 +26,28 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React is a JavaScript library that makes it easier to build UI for large scale applications. Some of the problems React solves revolve around state management of application data, and UI repainting in the browser when a change in state occurs (in vanilla JS you would have to create your own functions that render updated data to the UI after state change). React also makes it easy to compose UI by breaking everything into components. Finally, React accomplishes all this with minimal cost to application performance/speed, which is crucial to big applications like Facebook.
+
 - [ ] What does it mean to _think_ in react?
+
+Thinking in React refers to a particular way developers plan their applications. According to React docs, the thought process of building an app should flow in this way:
+-Think about the UI and break it up into its components. Each component should ideally do only one thing.
+-Build a static prototype using mock data
+-Identify State. What are all the pieces of data that will be changing as the user interacts with the app?
+-Choose where each slice of state is going to live. Which components are going to need access to each slice?
+-Add inverse data flow. By this time, the app already has the data flowing down from parent to child components via props, and although data can't flow from child to parent, the child component can use callbacks to mutate state that's positioned upstream.
 
 - [ ] Describe state.
 
+State is data that changes.
+
 - [ ] Describe props.
 
+Props is a read-only object that contains the data held in state; this object can be passed from the parent component to child components to keep the child components in sync with state changes.
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+Side effects are anything that has an effect on something outside the scope of the function. In React, we can sync effects to state or prop changes by using useEffect() that takes a callback (the actual side effect) and a dependency array where you can specify which state or prop to sync it to. 
 
 ## Project Set Up
 
